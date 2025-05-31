@@ -10,3 +10,9 @@ Route::get('/user', function (Request $request) {
 
 
 Route::apiResource('products', ProductController::class);
+
+
+Route::post('luc', function () {
+    return 'dkodkd';
+    
+});

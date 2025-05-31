@@ -48,7 +48,23 @@ class ProductController extends Controller
                 'description' => 'required|string',
                 'price' => 'required|numeric',
                 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ], [
+                'name.required' => 'Le nom du produit est obligatoire.',
+                'name.string' => 'Le nom du produit doit être une chaîne de caractères.',
+                'name.max' => 'Le nom du produit ne peut pas dépasser 255 caractères.',
+            
+                'description.required' => 'La description est obligatoire.',
+                'description.string' => 'La description doit être une chaîne de caractères.',
+            
+                'price.required' => 'Le prix est obligatoire.',
+                'price.numeric' => 'Le prix doit être un nombre.',
+            
+                'image.required' => 'L’image du produit est obligatoire.',
+                'image.image' => 'Le fichier doit être une image.',
+                'image.mimes' => 'L’image doit être de type : jpeg, png, jpg, gif, svg.',
+                'image.max' => 'La taille de l’image ne doit pas dépasser 2 Mo.',
             ]);
+            
 
             $product=new Product();
             $product->name=$validate['name'];
